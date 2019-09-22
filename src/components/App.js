@@ -5,6 +5,7 @@ import ArticleEdit from "./articles/ArticleEdit";
 import ArticleDelete from "./articles/ArticleDelete";
 import ArticleShow from "./articles/ArticleShow";
 import ArticleList from "./articles/ArticleList";
+import ArticleTable from "./articles/ArticleTable";
 import Header from "./Header";
 import history from "../history";
 

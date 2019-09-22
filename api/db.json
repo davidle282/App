@@ -1,0 +1,81 @@
+{
+  "articles": [
+    {
+      "article_title": "Augmented Reality",
+      "article_author": "David Le",
+      "article_publication_type": "Conference",
+      "article_publication": "some conference in a peer reviewed place",
+      "article_year": "2019",
+      "article_location": "Florida",
+      "article_status": "not_approved",
+      "userId": "116732988956700992933",
+      "id": 1
+    },
+    {
+      "article_title": "IoT applications",
+      "article_author": "John Bui",
+      "article_publication_type": "Conference",
+      "article_publication": "some conference in a peer reviewed place",
+      "article_year": "2019",
+      "article_location": "Florida",
+      "article_status": "not_approved",
+      "userId": "116732988956700992933",
+      "id": 2
+    },
+    {
+      "article_title": "Software development method",
+      "article_author": "Gavin",
+      "article_publication_type": "Conference",
+      "article_publication": "some conference in a peer reviewed place",
+      "article_year": "2019",
+      "article_location": "Florida",
+      "article_status": "not_approved",
+      "userId": "116732988956700992933",
+      "id": 3
+    },
+    {
+      "article_title": "Application of blockchain technology",
+      "article_author": "Sakeel",
+      "article_publication_type": "Conference",
+      "article_publication": "some conference in a peer reviewed place",
+      "article_year": "2019",
+      "article_location": "Florida",
+      "article_status": "not_approved",
+      "userId": "116732988956700992933",
+      "id": 4
+    },
+    {
+      "article_title": "Cloud computing",
+      "article_author": "John Bui",
+      "article_publication_type": "Conference",
+      "article_publication": "some conference in a peer reviewed place",
+      "article_year": "2019",
+      "article_location": "Florida",
+      "article_status": "not_approved",
+      "userId": "116732988956700992933",
+      "id": 5
+    },
+    {
+      "article_title": "Usability Testing",
+      "article_author": "David Le",
+      "article_publication_type": "Conference",
+      "article_publication": "some conference in a peer reviewed place",
+      "article_year": "2019",
+      "article_location": "Florida",
+      "article_status": "not_approved",
+      "userId": "116732988956700992933",
+      "id": 6
+    },
+    {
+      "article_title": "Software architecture document style",
+      "article_author": "Gavin",
+      "article_publication_type": "Conference",
+      "article_publication": "some conference in a peer reviewed place",
+      "article_year": "2019",
+      "article_location": "Florida",
+      "article_status": "not_approved",
+      "userId": "116732988956700992933",
+      "id": 7
+    }
+  ]
+}
