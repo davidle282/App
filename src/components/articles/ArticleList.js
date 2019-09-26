@@ -50,7 +50,7 @@ class ArticleList extends React.Component {
   }
 
   renderItem() {
-    return this.props.articles.map((article) => {
+    return this.props.articles.map((article) => { //THIS HOW IT IS STRUCTURED
       return (
         <tr key={article.id}>
           <td>{article.article_title}</td>

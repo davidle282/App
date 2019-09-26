@@ -6,7 +6,7 @@ import Searching from "./Searching.js";
 
 const Header = () => {
   return (
-    <div class="ui center aligned basic segment">
+    <div className="ui center aligned basic segment">
       <div className="ui secondary pointing menu">
         <Link to="/">
           <img src={logo} height="50%" />
@@ -18,7 +18,7 @@ const Header = () => {
           <GoogleAuth />
         </div>
       </div>
-      <div class="ui horizontal divider"></div>
+      <div className="ui horizontal divider"></div>
       <Searching />
       {/* <div className="ui fluid action input">
         <input type="text" placeholder="Search..." />

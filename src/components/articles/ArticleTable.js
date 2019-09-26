@@ -4,13 +4,22 @@ import { Link } from "react-router-dom";
 import { fetchArticles } from "../../actions";
 import articleReducer from "../../reducers/articleReducer";
 
+//GLOBAL FUNCTION. 
 function searchingFor(term) {
-  return function(x) {
-    return x.first.toLowerCase().includes(term.toLowerCase()) || !term;
+  return function(x)
+  {
+    console.log(term);
+    console.log(x.article_title);
+    return x.article_title.toLowerCase().includes(term.toLowerCase());//x.props.article.article_title === term;
   };
+  /*return function(x) {
+    return x.first;//.toLowerCase().includes(term.toLowerCase()) || !term;
+
+    if this article's title contains the term, return true, else return false
+  };*/
 }
 
-class ArticleList extends React.Component {
+class ArticleTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,6 +30,7 @@ class ArticleList extends React.Component {
   }
 
   searchHandler(event) {
+    console.log("searching.....")
     this.setState({ term: event.target.value });
   }
 
@@ -57,11 +67,15 @@ class ArticleList extends React.Component {
           <input
             type="text"
             onChange={this.searchHandler}
-            value={this.state.term}
             placeholder="Search.."
           />
+          <input
+            type="button" //WORK IN PROGRESS
+            text="Search"
+            onClick={this.searchHandler}
+          />
         </form>
-        <table class="ui selectable celled table">
+        <table className="ui selectable celled table">
           <thead>
             <tr>
               <th>Title</th>
@@ -80,8 +94,7 @@ class ArticleList extends React.Component {
   }
 
   renderItem() {
-    const { term } = this.state;
-    return this.props.articles.filter(searchingFor(term)).map((article) => {
+    return this.props.articles.filter(searchingFor(this.state.term)).map((article) => {
       return (
         <tr key={article.id}>
           <td>{article.article_title}</td>
@@ -140,4 +153,4 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   { fetchArticles }
-)(ArticleList);
+)(ArticleTable);

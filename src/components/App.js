@@ -15,7 +15,7 @@ const App = () => {
       <Router history={history}>
         <div>
           <Header />
-          <Route path="/" exact component={ArticleList} />
+          <Route path="/" exact component={ArticleTable} />
           <Route path="/articles/new" exact component={ArticleCreate} />
           <Route path="/articles/edit/:id" exact component={ArticleEdit} />
           <Route path="/articles/delete/:id" exact component={ArticleDelete} />
