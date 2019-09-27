@@ -5,16 +5,13 @@ import { fetchArticles } from "../../actions";
 import articleReducer from "../../reducers/articleReducer";
 
 //GLOBAL FUNCTION. 
-function searchingFor(term) {
+function searchingFor(input) {
   return function(x)
   {
-    console.log(term);
-    console.log(x.article_title);
-    return x.article_title.toLowerCase().includes(term.toLowerCase());//x.props.article.article_title === term;
+    return x.article_title.toLowerCase().includes(input.searchTitle.toLowerCase())
+    && x.article_author.toLowerCase().includes(input.searchAuthor.toLowerCase())
   };
-  /*return function(x) {
-    return x.first;//.toLowerCase().includes(term.toLowerCase()) || !term;
-
+  /*
     if this article's title contains the term, return true, else return false
   };*/
 }
@@ -24,14 +21,24 @@ class ArticleTable extends React.Component {
     super(props);
     this.state = {
       articles: articleReducer,
-      term: ""
+      searchTitle: "",
+      searchAuthor: "",
+      searchDateMin: "",
+      searchDateMax: ""
     };
     this.searchHandler = this.searchHandler.bind(this);
   }
 
   searchHandler(event) {
-    console.log("searching.....")
-    this.setState({ term: event.target.value });
+    console.log(event.target.id)
+    if(event.target.id === "title")
+    {
+      this.setState({ searchTitle: event.target.value });
+    }
+    if(event.target.id === "author")
+    {
+      this.setState({ searchAuthor: event.target.value });
+    }
   }
 
   componentDidMount() {
@@ -65,14 +72,16 @@ class ArticleTable extends React.Component {
       <div>
         <form className="ui form">
           <input
+            id="title"
             type="text"
             onChange={this.searchHandler}
-            placeholder="Search.."
+            placeholder="Search Title"
           />
           <input
-            type="button" //WORK IN PROGRESS
-            text="Search"
-            onClick={this.searchHandler}
+            id="author"
+            type="text"
+            onChange={this.searchHandler}
+            placeholder="Search Author"
           />
         </form>
         <table className="ui selectable celled table">
@@ -94,7 +103,7 @@ class ArticleTable extends React.Component {
   }
 
   renderItem() {
-    return this.props.articles.filter(searchingFor(this.state.term)).map((article) => {
+    return this.props.articles.filter(searchingFor(this.state)).map((article) => {
       return (
         <tr key={article.id}>
           <td>{article.article_title}</td>
